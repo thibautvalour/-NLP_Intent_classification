@@ -34,9 +34,9 @@ class BertBiLSTM(nn.Module):
         input_ids = batch['text'].to(self.args['device'])
         labels = batch['label'].to(self.args['device'])
 
-        input_ids = input_ids.view(self.args['bsize']*self.args['max_sentence'], self.args['max_word'])
+        input_ids = input_ids.view(self.args['batch_size']*self.args['max_sentence'], self.args['max_word'])
         outputs = self.bert_model(input_ids)['pooler_output']
-        outputs = outputs.view(self.args['bsize'], self.args['max_sentence'], -1)
+        outputs = outputs.view(self.args['batch_size'], self.args['max_sentence'], -1)
  
         outputs = self.dropout(outputs)
         outputs, _ = self.lstm(outputs)
