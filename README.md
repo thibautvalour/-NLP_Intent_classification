@@ -6,7 +6,7 @@ More details about the project can be found in the report.
 
 ## Dataset
 
-The dataset used in this project is silicone from Huggingface datasets. It includes X examples of sentences from different domains. https://huggingface.co/datasets/silicone
+The dataset used in this project is silicone from Huggingface datasets : https://huggingface.co/datasets/silicone
 
 ## Models
 
