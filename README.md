@@ -1,4 +1,4 @@
-# NLP_Intent_classification
+# NLP Intent classification
 
 This is a simple NLP project to classify the intent of a sentence in a dialogue. The purpose of this project is to showcase the implementation of two models for intent classification using natural language processing techniques.
 
