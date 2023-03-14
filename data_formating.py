@@ -5,10 +5,7 @@ import datasets
 from torch.utils.data import Dataset, DataLoader
 
 
-def tokenize_pad_numericalize_dialog(entry, vocab_stoi, max_length):
-  
-  tokenizer = BertTokenizer.from_pretrained('bert-base-cased')
-
+def tokenize_pad_numericalize_dialog(entry, tokenizer, vocab_stoi, max_length):
   ''' message level '''
   dialog = [[vocab_stoi['[CLS]']]
             + [vocab_stoi[token] if token in vocab_stoi else vocab_stoi['[UNK]'] 
@@ -27,7 +24,7 @@ def tokenize_pad_numericalize_dialog(entry, vocab_stoi, max_length):
   
   return padded_dialog
 
-def tokenize_all_dialog(entries, vocab_stoi, max_message_length,
+def tokenize_all_dialog(entries, tokenizer, vocab_stoi, max_message_length,
                         max_dialog_length):
     ''' dialog level '''
     pad_message = [ vocab_stoi['[PAD]'] ]
@@ -45,7 +42,7 @@ def tokenize_all_dialog(entries, vocab_stoi, max_message_length,
     # Tokenize and pad messages for each dialogue
     for dialogue_id, text in dialogues.items():
         labels = dialogue_labels[dialogue_id]
-        text = tokenize_pad_numericalize_dialog(text, vocab_stoi,
+        text = tokenize_pad_numericalize_dialog(text, tokenizer, vocab_stoi,
                                                 max_length=max_message_length)
         if len(text) < max_dialog_length:
             text = text + [[vocab_stoi['[PAD]']] * max_message_length 
@@ -81,8 +78,8 @@ def make_dataloader(dataset_train, dataset_test, args):
     dataset = dataset.rename_column("Utterance", "text")
     tokenizer = BertTokenizer.from_pretrained('bert-base-cased')
     vocab_stoi = tokenizer.get_vocab()
-    encoded_dataset = dataset.map(lambda e: tokenize_all_dialog(e, vocab_stoi, args['max_word'],
-                                                                args['max_sentence']),
+    encoded_dataset = dataset.map(lambda e: tokenize_all_dialog(e, tokenizer, vocab_stoi,
+                                                                args['max_word'], args['max_sentence']),
                                   batched=True, remove_columns=['Dialogue_Act','Dialogue_ID','Idx'])
     encoded_dataset.set_format("torch")
 
