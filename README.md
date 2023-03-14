@@ -21,5 +21,5 @@ To run the code in this project, follow these steps:
 
 - Clone the repository.
 - Install the required dependencies.
-- Run 'baseline.ipynb' to view the implementation of the baseline model, this notebook is more detailed.
-- Run 'main.ipynb' to train and validate the BertBiLSTM model.
+- Run `baseline.ipynb` to view the implementation of the baseline model, this notebook is more detailed.
+- Run `main.ipynb` to train and validate the BertBiLSTM model.
