@@ -2,11 +2,9 @@
 
 This is a simple NLP project to classify the intent of a sentence in a dialogue. The purpose of this project is to showcase the implementation of two models for intent classification using natural language processing techniques.
 
-More details about the project can be found in the report.
-
 ## Dataset
 
-The dataset used in this project is silicone from Huggingface datasets. It includes X examples of sentences from different domains. https://huggingface.co/datasets/silicone
+The dataset used in this project is silicone from Huggingface datasets : https://huggingface.co/datasets/silicone
 
 ## Models
 
@@ -14,6 +12,8 @@ Two models were implemented in this project:
 
 - Baseline model: A model using Bert with a linear layer on top of it. Accuracy on validation set: 60%.
 - BertBiLSTM model: LSTM model on top of the Bert in order to take into account the context of the sentences. Accuracy on validation set: 85%.
+
+More details about the models and their results can be found in `report.pdf`
 
 ## Running the code
 
