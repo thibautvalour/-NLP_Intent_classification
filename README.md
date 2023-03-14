@@ -19,9 +19,7 @@ Two models were implemented in this project:
 
 To run the code in this project, follow these steps:
 
-Clone the repository.
-Install the required dependencies.
-Run baseline.ipynb to view the implementation of the baseline model, this notebook is more detailed.
-Run main.py to train and validate the BertBiLSTM model.
-
-You can run the training and validation of the basline in the notebook `baseline.ipynb`, which is more detailed. Then you can run the training and validation of this model with the file `main.ipynb`.
+- Clone the repository.
+- Install the required dependencies.
+- Run 'baseline.ipynb' to view the implementation of the baseline model, this notebook is more detailed.
+- Run 'main.ipynb' to train and validate the BertBiLSTM model.
