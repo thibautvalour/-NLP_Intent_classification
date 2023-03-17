@@ -13,6 +13,8 @@ Two models were implemented in this project:
 - Baseline model: A model using Bert with a linear layer on top of it. Accuracy on validation set: 60%.
 - BertBiLSTM model: LSTM model on top of the Bert in order to take into account the context of the sentences. Accuracy on validation set: 85%.
 
+<img src="https://github.com/thibautvalour/NLP_Intent_classification/blob/main/Architecture.png" width="500">
+
 More details about the models and their results can be found in `report.pdf`
 
 ## Running the code
