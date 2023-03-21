@@ -15,7 +15,7 @@ Two models were implemented in this project:
 
 <img src="https://github.com/thibautvalour/NLP_Intent_classification/blob/main/Architecture.png" width="500">
 
-More details about the models and their results can be found in `report.pdf`
+More details about the models and their results can be found in `openreview_report.pdf`
 
 ## Running the code
 
